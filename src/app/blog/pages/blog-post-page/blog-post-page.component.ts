@@ -33,6 +33,11 @@ export class BlogPostPageComponent implements OnInit {
       });
   }
 
+  handleAddComment(comment: Comments) {
+    console.log(comment);
+    this.commentService.addComment(1, comment);
+  }
+
   private getPostDetails(id: string) {
     this.blogService.getPostById(+id).subscribe(data => {
       this.postContent = data;

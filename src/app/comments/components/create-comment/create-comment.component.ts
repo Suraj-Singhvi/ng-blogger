@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Pattern } from 'src/app/shared/pattern';
 
 @Component({
   selector: 'etalytics-create-comment',
@@ -8,16 +9,20 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class CreateCommentComponent implements OnInit {
   myForm: FormGroup;
+  @Output() addComment: EventEmitter<Comment> = new EventEmitter();
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
       name: ['', Validators.required],
-      comment: ['', Validators.required]
+      comment: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern(Pattern.EMAIL_PATTERN)]]
     });
   }
 
-  addComment(): void {
-    console.log(this.myForm.value);
+  addCommentEvent(event: any) {
+    const comment = this.myForm.value;
+    comment.postId = 1;
+    this.addComment.emit(comment);
   }
 }
