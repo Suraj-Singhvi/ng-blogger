@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BlogPost } from '../../interface/blog-post';
 
 @Component({
   selector: 'etalytics-blog-post-details',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-post-details.component.scss']
 })
 export class BlogPostDetailsComponent implements OnInit {
+  @Input() postContent: BlogPost;
+
   constructor() {}
 
   ngOnInit(): void {}

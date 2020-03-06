@@ -1,4 +1,5 @@
-<p>blog-post-page works!</p>
-<etalytics-blog-post-details></etalytics-blog-post-details>
+<div *ngIf="postContent">
+  <etalytics-blog-post-details [postContent]="postContent"> </etalytics-blog-post-details>
+</div>
 <etalytics-create-comment></etalytics-create-comment>
-<etalytics-view-comments></etalytics-view-comments>
+<etalytics-view-comments [comments]="comments"></etalytics-view-comments>

@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
 import { BlogService } from '../../services/blog.service';
 import { CommentService } from 'src/app/comments/services/comment.service';
+import { BlogPost } from '../../interface/blog-post';
+import { Comments } from 'src/app/comments/interfaces/comments.interface';
+
 @Component({
   selector: 'etalytics-blog-post-page',
   templateUrl: './blog-post-page.component.html',
@@ -10,6 +13,8 @@ import { CommentService } from 'src/app/comments/services/comment.service';
 })
 export class BlogPostPageComponent implements OnInit {
   id: any;
+  postContent: BlogPost;
+  comments: Comments[];
   constructor(
     private activatedRoute: ActivatedRoute,
     private blogService: BlogService,
@@ -30,13 +35,13 @@ export class BlogPostPageComponent implements OnInit {
 
   private getPostDetails(id: string) {
     this.blogService.getPostById(+id).subscribe(data => {
-      console.log(`data..................${data}`);
+      this.postContent = data;
     });
   }
 
   private getCommentsForPost(id: string) {
     this.commentService.getComments(+id).subscribe(data => {
-      console.log(`data..................${JSON.stringify}`);
+      this.comments = data;
     });
   }
 }

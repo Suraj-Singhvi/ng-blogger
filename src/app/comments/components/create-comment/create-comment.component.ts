@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'etalytics-create-comment',
@@ -6,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-comment.component.scss']
 })
 export class CreateCommentComponent implements OnInit {
-  constructor() {}
+  myForm: FormGroup;
+  constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.myForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      comment: ['', Validators.required]
+    });
+  }
+
+  addComment(): void {
+    console.log(this.myForm.value);
+  }
 }

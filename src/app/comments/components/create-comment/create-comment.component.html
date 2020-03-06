@@ -1,1 +1,17 @@
-<p>create-comment works!</p>
+<div class="comment-form-card">
+  <form class="comment-form" [formGroup]="myForm" (ngSubmit)="addComment()">
+    <mat-form-field class="comment-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of user" value="" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field class="comment-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Feel free to reply..." formControlName="comment"></textarea>
+    </mat-form-field>
+
+    <button type="submit">POST a comment</button>
+
+    {{ myForm.value | json }}
+  </form>
+</div>
