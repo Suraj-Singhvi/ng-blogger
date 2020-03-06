@@ -1,0 +1,17 @@
+<div>
+  <cdk-virtual-scroll-viewport itemSize="5" autosize style="height:482px">
+    <mat-list>
+      <mat-list-item *cdkVirtualFor="let post of blogPosts">
+        <div class="blog-post-item">
+          <mat-card>
+            <mat-card-title>#{{ post.id }} {{ post.title }}</mat-card-title>
+            <mat-card-content> {{ post.body }}</mat-card-content>
+            <mat-card-actions>
+              <a routerLink="/blogs/post/{{ post.id }}" routerLinkActive="router-link-active">View More</a>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </cdk-virtual-scroll-viewport>
+</div>

@@ -12,6 +12,12 @@ export class BlogService extends BaseService {
   getPostById(id: number): Observable<BlogPost> {
     return this.httpClient
       .get<BlogPost>(`${Constants.apiRoot}/posts/${id}`)
-      .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to load Post')));
+      .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to load Post details')));
+  }
+
+  getAllBlogs(): Observable<BlogPost[]> {
+    return this.httpClient
+      .get<BlogPost[]>(`${Constants.apiRoot}/posts`)
+      .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to load any Post')));
   }
 }
