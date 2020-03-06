@@ -26,4 +26,16 @@ export class BlogService extends BaseService {
       .delete<any>(`${Constants.apiRoot}/posts/${id}`)
       .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to load any Post')));
   }
+
+  create(post: BlogPost) {
+    return this.httpClient
+      .post<BlogPost>(`${Constants.apiRoot}/posts/`, post)
+      .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to create blog post')));
+  }
+
+  update(post: BlogPost) {
+    return this.httpClient
+      .patch<BlogPost>(`${Constants.apiRoot}/posts/${post.id}`, post)
+      .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to update blog post')));
+  }
 }

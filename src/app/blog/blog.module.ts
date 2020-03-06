@@ -12,6 +12,12 @@ import { CreateBlogPostComponent } from './components/create-blog-post/create-bl
 import { BlogPostListComponent } from './pages/blog-post-list/blog-post-list.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     BlogPostDetailsComponent,
@@ -28,7 +34,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     MatCardModule,
     MatIconModule,
-    ScrollingModule
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ScrollingModule,
+    FormsModule
   ]
 })
 export class BlogModule {}
