@@ -25,3 +25,5 @@ Focus on well documented, high quality code following Angular best practice.
 > ng g s comments --dry-run
 
 Detail Page can be viewed at http://localhost:4200/blogs/post/1
+
+-> write trackby on forLoop

@@ -5,13 +5,21 @@ import { BlogPostPageComponent } from './pages/blog-post-page/blog-post-page.com
 import { CommentsModule } from '../comments/comments.module';
 import { BlogRoutingModule } from './blog-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { BlogPostListPageComponent } from './pages/blog-post-list-page/blog-post-list-page.component';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-
+import { CreateBlogPostComponent } from './components/create-blog-post/create-blog-post.component';
+import { BlogPostListComponent } from './pages/blog-post-list/blog-post-list.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
-  declarations: [BlogPostDetailsComponent, BlogPostPageComponent, BlogPostListPageComponent],
+  declarations: [
+    BlogPostDetailsComponent,
+    BlogPostPageComponent,
+    BlogPostListComponent,
+    CreateBlogPostComponent,
+    BlogsComponent
+  ],
   imports: [
     CommonModule,
     BlogRoutingModule,
@@ -19,6 +27,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     SharedModule,
     MatListModule,
     MatCardModule,
+    MatIconModule,
     ScrollingModule
   ]
 })
