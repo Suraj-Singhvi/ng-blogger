@@ -5,6 +5,7 @@ import { BlogPostListPageComponent } from './pages/blog-post-list-page/blog-post
 
 const routes: Routes = [
   { path: '', component: BlogPostListPageComponent },
+  { path: 'blogs', component: BlogPostListPageComponent },
   { path: 'post/:id', component: BlogPostPageComponent }
 ];
 
