@@ -4,9 +4,10 @@ import { BlogPostDetailsComponent } from './components/blog-post-details/blog-po
 import { BlogPostPageComponent } from './pages/blog-post-page/blog-post-page.component';
 import { CommentsModule } from '../comments/comments.module';
 import { BlogRoutingModule } from './blog-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [BlogPostDetailsComponent, BlogPostPageComponent],
-  imports: [CommonModule, BlogRoutingModule, CommentsModule]
+  imports: [CommonModule, BlogRoutingModule, CommentsModule, SharedModule]
 })
 export class BlogModule {}
