@@ -8,12 +8,12 @@ import { Pattern } from 'src/app/shared/pattern';
   styleUrls: ['./create-comment.component.scss']
 })
 export class CreateCommentComponent implements OnInit {
-  myForm: FormGroup;
+  createCommentForm: FormGroup;
   @Output() addComment: EventEmitter<Comment> = new EventEmitter();
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.myForm = this.formBuilder.group({
+    this.createCommentForm = this.formBuilder.group({
       name: ['', Validators.required],
       comment: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern(Pattern.EMAIL_PATTERN)]]
@@ -21,7 +21,7 @@ export class CreateCommentComponent implements OnInit {
   }
 
   addCommentEvent(event: any) {
-    const comment = this.myForm.value;
+    const comment = this.createCommentForm.value;
     comment.postId = 1;
     this.addComment.emit(comment);
   }

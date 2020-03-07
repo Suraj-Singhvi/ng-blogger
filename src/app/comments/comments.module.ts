@@ -5,10 +5,11 @@ import { CreateCommentComponent } from './components/create-comment/create-comme
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [ViewCommentsComponent, CreateCommentComponent],
-  imports: [CommonModule, ReactiveFormsModule, MatCardModule, MatInputModule],
+  imports: [CommonModule, ReactiveFormsModule, MatCardModule, MatInputModule, MatListModule],
   exports: [CreateCommentComponent, ViewCommentsComponent]
 })
 export class CommentsModule {}

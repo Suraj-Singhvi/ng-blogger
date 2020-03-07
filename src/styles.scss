@@ -8,6 +8,7 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   height: 100%;
   display: flex;
+  background-color: #f5f5f5;
 }
 
 p {
@@ -34,4 +35,12 @@ mat-list-item:not(:first-of-type) {
 
 mat-card-actions {
   margin-bottom: 0;
+}
+
+span.mat-button-wrapper {
+  color: #f0f8ff;
+}
+
+textarea {
+  min-height: 120px;
 }

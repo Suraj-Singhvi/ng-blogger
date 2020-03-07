@@ -35,7 +35,9 @@ export class BlogPostPageComponent implements OnInit {
 
   handleAddComment(comment: Comments) {
     console.log(comment);
-    this.commentService.addComment(1, comment);
+    this.commentService.addComment(1, comment).subscribe(data => {
+      console.log('comment added...');
+    });
   }
 
   private getPostDetails(id: string) {
