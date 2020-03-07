@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ">
   <div class="col-50">
     <etalytics-create-blog-post
       [blogPost]="currentBlogPost"
@@ -13,6 +13,7 @@
       [blogPosts]="blogPosts$ | async"
       (selected)="selectBlogPost($event)"
       (deleted)="deleteBlogPost($event)"
+      (viewDetail)="viewBlogPostDetail($event)"
     >
     </etalytics-blog-post-list>
   </div>

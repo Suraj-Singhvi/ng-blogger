@@ -7,10 +7,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderModule } from './header/header.module';
 import { CoreModule } from './core/core.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, HeaderModule, CoreModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    HeaderModule,
+    CoreModule,
+    FlexLayoutModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

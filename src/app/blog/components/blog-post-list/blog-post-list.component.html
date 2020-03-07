@@ -4,9 +4,18 @@
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <mat-list-item *ngFor="let post of blogPosts" (click)="selected.emit(post)" class="record">
+      <mat-list-item
+        class="blog-post-list-item"
+        *ngFor="let post of blogPosts"
+        (click)="selected.emit(post)"
+        class="record"
+      >
         <h3 mat-line>#{{ post.id }} {{ post.title }}</h3>
         <p mat-line>{{ post.body }}</p>
+
+        <button mat-icon-button (click)="viewDetail.emit(post); $event.stopImmediatePropagation()">
+          <mat-icon>eye</mat-icon>
+        </button>
         <button mat-icon-button (click)="deleted.emit(post); $event.stopImmediatePropagation()">
           <mat-icon>close</mat-icon>
         </button>

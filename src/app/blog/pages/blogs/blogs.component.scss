@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  // // max-width: 50%;
+  // width: 100%;
+  .col-50 {
+    // flex: 0 0 50%;
+    width: 50%;
+  }
+}

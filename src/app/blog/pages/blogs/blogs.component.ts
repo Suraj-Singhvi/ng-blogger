@@ -3,6 +3,7 @@ import { BlogPost } from '../../interface/blog-post';
 import { BlogService } from '../../services/blog.service';
 import { Observable } from 'rxjs';
 import { NotificationService } from 'src/app/core/services/notification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'etalytics-blogs',
@@ -14,7 +15,7 @@ export class BlogsComponent implements OnInit {
   currentBlogPost: BlogPost;
   users$: { id: number; name: string }[];
 
-  constructor(private blogService: BlogService, private ns: NotificationService) {}
+  constructor(private blogService: BlogService, private ns: NotificationService, private router: Router) {}
 
   ngOnInit(): void {
     this.getBlogPosts();
@@ -69,6 +70,12 @@ export class BlogsComponent implements OnInit {
   }
 
   deleteBlogPost(post: BlogPost) {
-    this.blogService.delete(post.id);
+    this.blogService.delete(post.id).subscribe(data => {
+      this.ns.emit(`Deleted Post by id ${post.id} Successfully!`);
+    });
+  }
+
+  viewBlogPostDetail(post: BlogPost) {
+    this.router.navigate([`/blogs/post/${post.id}`]);
   }
 }
