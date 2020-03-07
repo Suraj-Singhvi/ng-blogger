@@ -10,7 +10,7 @@
   <form (submit)="saved.emit(selectedBlogPost)">
     <mat-card-content>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Title" [(ngModel)]="selectedBlogPost.title" type="text" name="title" />
+        <input matInput placeholder="Title" required [(ngModel)]="selectedBlogPost.title" type="text" name="title" />
       </mat-form-field>
 
       <mat-form-field class="full-width">

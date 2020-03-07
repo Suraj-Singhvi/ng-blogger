@@ -38,7 +38,8 @@ export class BlogsComponent implements OnInit {
     }
   }
 
-  createBlogPost(project) {
+  createBlogPost(project: BlogPost) {
+    // TODO: if the project obj has property with empty values... dont make API request
     this.blogService.create(project).subscribe(response => {
       this.ns.emit('Project created!');
       this.getBlogPosts();

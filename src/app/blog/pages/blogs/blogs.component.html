@@ -1,13 +1,4 @@
 <div class="blog-container">
-  <div class="create-blog-post">
-    <etalytics-create-blog-post
-      [blogPost]="currentBlogPost"
-      [users]="users$"
-      (saved)="saveBlogPost($event)"
-      (cancelled)="resetCurrentBlogPost()"
-    >
-    </etalytics-create-blog-post>
-  </div>
   <div class="blog-post-list">
     <etalytics-blog-post-list
       [blogPosts]="blogPosts$ | async"
@@ -16,5 +7,14 @@
       (viewDetail)="viewBlogPostDetail($event)"
     >
     </etalytics-blog-post-list>
+  </div>
+  <div class="create-blog-post">
+    <etalytics-create-blog-post
+      [blogPost]="currentBlogPost"
+      [users]="users$"
+      (saved)="saveBlogPost($event)"
+      (cancelled)="resetCurrentBlogPost()"
+    >
+    </etalytics-create-blog-post>
   </div>
 </div>

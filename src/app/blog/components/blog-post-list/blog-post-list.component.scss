@@ -7,8 +7,8 @@
   display: block;
   overflow-wrap: break-word;
   max-width: 100%;
+}
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.blog-post-list-item-card {
+  margin-bottom: 12px;
 }

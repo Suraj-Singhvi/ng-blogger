@@ -24,21 +24,17 @@ mat-form-field {
   width: 100%;
 }
 
-mat-list-item:hover {
+.blog-post-list-item-card:hover {
   cursor: pointer;
   background: whitesmoke;
 }
 
-mat-list-item:not(:first-of-type) {
+.blog-post-list-item-card:not(:first-of-type) {
   border-top: 1px solid #efefef;
 }
 
 mat-card-actions {
   margin-bottom: 0;
-}
-
-span.mat-button-wrapper {
-  color: #f0f8ff;
 }
 
 textarea {
