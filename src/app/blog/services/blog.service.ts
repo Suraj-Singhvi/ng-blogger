@@ -5,9 +5,6 @@ import { BlogPost } from '../interface/blog-post';
 import { Constants } from 'src/app/constants';
 import { BaseService } from 'src/app/shared/services/base.service';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class BlogService extends BaseService {
   getPostById(id: string): Observable<BlogPost> {
     return this.httpClient

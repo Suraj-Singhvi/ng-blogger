@@ -5,9 +5,6 @@ import { Comments } from '../interfaces/comments.interface';
 import { Constants } from 'src/app/constants';
 import { timeout, catchError } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class CommentService extends BaseService {
   getComments(postId: string): Observable<Comments[]> {
     return this.httpClient

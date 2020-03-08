@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 import { BlogPostListComponent } from './components/blog-post-list/blog-post-list.component';
+import { BlogService } from './services/blog.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { BlogPostListComponent } from './components/blog-post-list/blog-post-lis
     MatButtonModule,
     ScrollingModule,
     FormsModule
-  ]
+  ],
+  providers: [BlogService]
 })
 export class BlogModule {}
