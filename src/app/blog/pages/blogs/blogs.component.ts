@@ -38,10 +38,15 @@ export class BlogsComponent implements OnInit {
     }
   }
 
-  createBlogPost(project: BlogPost) {
+  createBlogPost(blogPost: BlogPost) {
     // TODO: if the project obj has property with empty values... dont make API request
-    this.blogService.create(project).subscribe(response => {
-      this.ns.emit('Project created!');
+    if (Object.keys(blogPost).length === 0 && blogPost.constructor === Object) {
+      this.ns.emit('Please enter all the fields');
+      return;
+    }
+
+    this.blogService.create(blogPost).subscribe(response => {
+      this.ns.emit('BlogPost created!');
       this.getBlogPosts();
       this.resetCurrentBlogPost();
     });
@@ -73,6 +78,7 @@ export class BlogsComponent implements OnInit {
   deleteBlogPost(post: BlogPost) {
     this.blogService.delete(post.id).subscribe(data => {
       this.ns.emit(`Deleted Post by id ${post.id} Successfully!`);
+      this.getBlogPosts();
     });
   }
 

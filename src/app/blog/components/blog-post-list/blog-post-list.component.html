@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <div class="blog-post-list-item " *ngFor="let post of blogPosts" (click)="selected.emit(post)">
+      <div class="blog-post-list-item " *ngFor="let post of blogPosts?.reverse()" (click)="selected.emit(post)">
         <mat-card class="blog-post-list-item-card">
           <mat-card-header class="">
             <mat-card-title>#{{ post.id }} {{ post.title }}</mat-card-title>

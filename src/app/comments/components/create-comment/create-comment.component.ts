@@ -15,7 +15,7 @@ export class CreateCommentComponent implements OnInit {
   ngOnInit(): void {
     this.createCommentForm = this.formBuilder.group({
       name: ['', Validators.required],
-      comment: ['', Validators.required],
+      body: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern(Pattern.EMAIL_PATTERN)]]
     });
   }

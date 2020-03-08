@@ -9,7 +9,7 @@ import { BaseService } from 'src/app/shared/services/base.service';
   providedIn: 'root'
 })
 export class BlogService extends BaseService {
-  getPostById(id: number): Observable<BlogPost> {
+  getPostById(id: string): Observable<BlogPost> {
     return this.httpClient
       .get<BlogPost>(`${Constants.apiRoot}/posts/${id}`)
       .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to load Post details')));

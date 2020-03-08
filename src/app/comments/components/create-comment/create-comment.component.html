@@ -10,12 +10,13 @@
   <form class="comment-form" [formGroup]="createCommentForm" (ngSubmit)="addCommentEvent($event)">
     <mat-card-content>
       <mat-form-field class="comment-full-width">
-        <mat-label>Name</mat-label>
+        <mat-label>Name*</mat-label>
         <input matInput placeholder="Your Name" value="" formControlName="name" type="text" name="User Name" />
+        <mat-error *ngIf="createCommentForm.get('name').hasError('required')"> Name is required </mat-error>
       </mat-form-field>
 
       <mat-form-field class="comment-full-width">
-        <mat-label>Email</mat-label>
+        <mat-label>Email*</mat-label>
         <input matInput formControlName="email" placeholder="Ex. pat@example.com" />
         <mat-error
           *ngIf="
@@ -28,19 +29,19 @@
       </mat-form-field>
 
       <mat-form-field class="comment-full-width">
-        <mat-label>Leave a comment</mat-label>
+        <mat-label>Leave a comment*</mat-label>
         <textarea
           matInput
           placeholder="Feel free to reply..."
-          formControlName="comment"
+          formControlName="body"
           type="text"
           name="Comment Section"
         ></textarea>
+        <mat-error *ngIf="createCommentForm.get('body').hasError('required')"> Comment is required </mat-error>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button type="submit" mat-button color="primary" [disabled]="!createCommentForm.valid">POST a comment</button>
-      <!-- <button type="button" mat-button (click)="cancelled.emit($event)">Cancel</button> -->
+      <button type="submit" mat-button color="primary">POST a comment</button>
     </mat-card-actions>
   </form>
 </mat-card>

@@ -9,7 +9,7 @@ import { timeout, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CommentService extends BaseService {
-  getComments(postId: number): Observable<Comments[]> {
+  getComments(postId: string): Observable<Comments[]> {
     return this.httpClient
       .get<Comments[]>(`${Constants.apiRoot}/posts/${postId}/comments`)
       .pipe(timeout(this.config.Ajax.LongTimeout), catchError(this.createErrorHandler('Unable to load Comments')));
